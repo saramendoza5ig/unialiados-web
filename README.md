@@ -1,36 +1,184 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Unialiados Web
 
-## Getting Started
+Sitio web corporativo de Unialiados desarrollado con:
 
-First, run the development server:
+- Next.js
+- React
+- JavaScript
+- Tailwind CSS
+- Node.js
+
+## Objetivo
+
+Construir una página web moderna, responsive y escalable para Unialiados, incluyendo las siguientes secciones:
+
+- Home
+- Nosotros
+- Servicios
+- Análisis de Vulnerabilidades
+- Cotizador
+- Contáctenos
+- Unisoft
+
+> Unisoft continúa siendo una aplicación independiente desarrollada en PHP.  
+> La nueva página web únicamente tendrá una sección o acceso hacia la plataforma existente.
+
+## Requisitos
+
+- Node.js 20 o superior
+- npm
+
+## Instalación
+
+Clonar el repositorio:
+
+```bash
+git clone <URL_DEL_REPOSITORIO>
+```
+
+Entrar al proyecto:
+
+```bash
+cd unialiados-web
+```
+
+Instalar dependencias:
+
+```bash
+npm install
+```
+
+Crear archivo de variables de entorno:
+
+```bash
+copy .env.example .env.local
+```
+
+Ejecutar en desarrollo:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abrir:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Estructura principal
 
-## Learn More
+```text
+src/
+├── app/
+│   ├── analisis-vulnerabilidades/
+│   ├── contacto/
+│   ├── cotizador/
+│   ├── nosotros/
+│   ├── servicios/
+│   ├── unisoft/
+│   ├── globals.css
+│   ├── layout.js
+│   └── page.js
+│
+└── components/
+    ├── layout/
+    ├── sections/
+    └── ui/
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Organización de componentes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### layout
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Componentes globales utilizados en toda la aplicación.
 
-## Deploy on Vercel
+Ejemplos:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Header
+- Footer
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### sections
+
+Secciones principales de cada página.
+
+Ejemplos:
+
+- HomeHero
+- ServicesSection
+- AboutSection
+- VulnerabilitySection
+- QuoteSection
+- ContactCTA
+- UnisoftSection
+
+### ui
+
+Componentes reutilizables de interfaz.
+
+Ejemplos:
+
+- Button
+- Card
+- Container
+- SectionTitle
+
+## Flujo de ramas
+
+Ramas principales:
+
+```text
+main
+develop
+```
+
+`main` corresponde a la versión estable del proyecto.
+
+`develop` es la rama de integración del equipo.
+
+Cada tarea debe desarrollarse en una rama independiente creada desde `develop`.
+
+Ejemplos:
+
+```text
+feature/home
+feature/services
+feature/cotizador
+feature/contacto
+feature/unisoft
+fix/nombre-del-error
+```
+
+Flujo recomendado:
+
+```text
+feature/*
+    ↓
+develop
+    ↓
+main
+```
+
+Los cambios deben integrarse mediante Pull Request.
+
+## Variables de entorno
+
+Las variables disponibles se documentan en:
+
+```text
+.env.example
+```
+
+Cada desarrollador debe crear localmente:
+
+```text
+.env.local
+```
+
+No subir credenciales reales al repositorio.
+
+## Estado del proyecto
+
+El proyecto contiene actualmente la estructura técnica inicial.
+
+La implementación visual y funcional definitiva se realizará a partir de los mockups aprobados por el cliente.
