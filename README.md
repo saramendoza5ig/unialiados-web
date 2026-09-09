@@ -33,7 +33,7 @@ Construir una página web moderna, responsive y escalable para Unialiados, inclu
 Clonar el repositorio:
 
 ```bash
-git clone <URL_DEL_REPOSITORIO>
+git clone https://github.com/saramendoza5ig/unialiados-web.git
 ```
 
 Entrar al proyecto:
