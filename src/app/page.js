@@ -5,17 +5,17 @@ export default function Page() {
         <div className="container hero-grid">
           <div>
             <span className="eyebrow">
-              25+ años de respaldo empresarial en Colombia
+              Más de 25 años acompañando empresas en Colombia
             </span>
             <h1>
-              Gestión administrativa y
+              Gestión laboral, administrativa y
               <span>
-                seguridad social
+                de seguridad social
               </span>
               para empresas que buscan tranquilidad
             </h1>
             <p className="lead">
-              Acompañamos a empresas colombianas en seguridad social, nómina, cumplimiento normativo y gestión preventiva con atención cercana y especializada.
+              En Unialiados acompañamos a pequeñas y medianas empresas en la gestión de sus procesos laborales, administrativos y de seguridad social, brindando soluciones prácticas, confiables y adaptadas a las necesidades de cada organización.
             </p>
             <div className="hero-points">
               <span>
@@ -29,11 +29,11 @@ export default function Page() {
               </span>
             </div>
             <div className="actions">
-              <a className="btn btn-primary" href="/cotizador">
-                Cotizar solución en línea →
+              <a className="btn btn-primary" href="/servicios">
+                Conoce nuestros servicios
               </a>
-              <a className="btn btn-secondary" href="/servicios">
-                Explorar portafolio
+              <a className="btn btn-secondary" href="/cotizador">
+                Solicita una cotización
               </a>
             </div>
             <div className="hero-stats">
@@ -151,21 +151,24 @@ export default function Page() {
           </div>
           <div>
             <span className="eyebrow">
-              ¿Por qué Unialiados?
+              ¿Por qué elegir Unialiados?
             </span>
             <h2 className="section-title">
-              Una relación pensada para dar claridad y respaldo.
+              Experiencia, conocimiento y acompañamiento para tu empresa
             </h2>
+            <p className="lead">
+              Combinamos experiencia práctica, conocimiento normativo, tecnología y atención personalizada para ayudar a nuestros clientes a simplificar su operación y reducir riesgos.
+            </p>
             <div className="grid-2">
               <div className="card">
                 <div className="icon">
                   01
                 </div>
                 <h3>
-                  Ahorro de tiempo operativo
+                  Experiencia especializada
                 </h3>
                 <p>
-                  Procesos más claros y acompañamiento para reducir cargas repetitivas en su operación.
+                  Más de 25 años de experiencia acompañando procesos administrativos, laborales y de seguridad social.
                 </p>
               </div>
               <div className="card">
@@ -173,10 +176,10 @@ export default function Page() {
                   02
                 </div>
                 <h3>
-                  Prevención de riesgos
+                  Soluciones a la medida
                 </h3>
                 <p>
-                  Revisión y seguimiento para anticipar inconsistencias, novedades y requerimientos.
+                  Nuestros servicios se ajustan al tamaño de la empresa, número de trabajadores y necesidades específicas de cada cliente.
                 </p>
               </div>
               <div className="card">
@@ -184,10 +187,10 @@ export default function Page() {
                   03
                 </div>
                 <h3>
-                  Cumplimiento
+                  Tecnología aplicada
                 </h3>
                 <p>
-                  Orientación basada en los lineamientos aplicables y las necesidades de cada empresa.
+                  Utilizamos herramientas tecnológicas propias, como Unisoft, para organizar la información, mejorar la trazabilidad y optimizar los procesos.
                 </p>
               </div>
               <div className="card">
@@ -195,10 +198,10 @@ export default function Page() {
                   04
                 </div>
                 <h3>
-                  Atención cercana
+                  Acompañamiento preventivo
                 </h3>
                 <p>
-                  Acompañamiento humano, comunicación directa y seguimiento continuo.
+                  Trabajamos con un enfoque orientado al cumplimiento normativo, la prevención de riesgos y la atención oportuna de requerimientos.
                 </p>
               </div>
             </div>
@@ -226,10 +229,10 @@ export default function Page() {
                 01
               </span>
               <h3>
-                Diagnóstico inicial
+                Conocemos tu operación
               </h3>
               <p>
-                Revisamos el contexto, los procesos actuales y los principales puntos de atención.
+                Identificamos las necesidades de la empresa, su número de trabajadores y los procesos que requieren acompañamiento.
               </p>
             </div>
             <div className="card step">
@@ -237,10 +240,10 @@ export default function Page() {
                 02
               </span>
               <h3>
-                Propuesta a medida
+                Definimos la solución
               </h3>
               <p>
-                Definimos el alcance de acuerdo con el volumen, servicio y necesidades de la empresa.
+                Establecemos el alcance del servicio de acuerdo con las necesidades administrativas, laborales y de seguridad social.
               </p>
             </div>
             <div className="card step">
@@ -248,10 +251,10 @@ export default function Page() {
                 03
               </span>
               <h3>
-                Implementación ágil
+                Gestionamos los procesos
               </h3>
               <p>
-                Organizamos la puesta en marcha procurando una transición clara y controlada.
+                Nuestro equipo ejecuta y acompaña las actividades definidas, manteniendo organización, seguimiento y comunicación permanente.
               </p>
             </div>
             <div className="card step">
@@ -259,10 +262,10 @@ export default function Page() {
                 04
               </span>
               <h3>
-                Acompañamiento continuo
+                Acompañamos continuamente
               </h3>
               <p>
-                Realizamos seguimiento y atención a novedades durante la prestación del servicio.
+                Realizamos seguimiento a las novedades y requerimientos para mantener los procesos actualizados y reducir riesgos operativos.
               </p>
             </div>
           </div>
@@ -276,18 +279,18 @@ export default function Page() {
                 ATENCIÓN CORPORATIVA
               </span>
               <h2>
-                ¿Listo para fortalecer la gestión de tu empresa?
+                ¿Necesitas apoyo en la gestión de tu empresa?
               </h2>
               <p>
-                Conoce las soluciones de Unialiados y encuentra el acompañamiento adecuado para tu operación.
+                Nuestro equipo puede ayudarte a organizar y acompañar tus procesos de nómina, seguridad social y gestión administrativa.
               </p>
             </div>
             <div className="actions">
               <a className="btn btn-gold" href="/cotizador">
-                Cotizar solución
+                Solicitar cotización
               </a>
               <a className="btn btn-light" href="/contacto">
-                Contáctenos
+                Contáctanos
               </a>
             </div>
           </div>
