@@ -7,10 +7,10 @@ export default function Page() {
             Sobre Unialiados
           </span>
           <h1>
-            El activo más importante de su empresa merece expertos dedicados.
+            Más de dos décadas acompañando el crecimiento de las empresas
           </h1>
           <p>
-            Una propuesta de acompañamiento que combina conocimiento técnico, atención cercana y experiencia en gestión laboral y seguridad social.
+            Unidos & Aliados de Colombia S.A.S. es una empresa colombiana dedicada a la consultoría y gestión empresarial, especializada en el acompañamiento administrativo, laboral y organizacional de pequeñas y medianas empresas.
           </p>
         </div>
       </section>
@@ -55,17 +55,13 @@ export default function Page() {
               </div>
             </div>
             <h2 className="section-title small">
-              El capital humano es el motor de cada organización.
+              Fundada el 24 de septiembre de 2001
             </h2>
             <p className="copy">
-              En
-              <strong>
-                Unidos & Aliados de Colombia S.A.S.
-              </strong>
-              acompañamos organizaciones de diferentes sectores en procesos de seguridad social, nómina, cumplimiento normativo y gestión administrativa, buscando que sus equipos directivos puedan concentrarse en el crecimiento de su negocio.
+              La iniciativa nació como respuesta a la necesidad de apoyar a los empresarios en los procesos de formalización y cumplimiento de la normatividad laboral y de seguridad social.
             </p>
             <p className="copy">
-              Nuestra metodología combina rigor técnico con una atención cercana y personalizada, articulando personas, procesos y herramientas de acuerdo con las necesidades de cada empresa.
+              Desde entonces hemos desarrollado experiencia especialmente en empresas del sector de la construcción, participando directa e indirectamente en diferentes proyectos de infraestructura y obras civiles del país.
             </p>
             <div className="actions">
               <a className="btn btn-primary" href="#equipo">
@@ -89,10 +85,10 @@ export default function Page() {
                 Nuestra misión
               </span>
               <h3>
-                Brindar soluciones especializadas y confiables.
+                Apoyar a las empresas en su crecimiento y formalización
               </h3>
               <p>
-                Apoyamos a las empresas en su gestión laboral, seguridad social y cumplimiento, generando tranquilidad en sus procesos y contribuyendo a un crecimiento sostenible con un enfoque humano y cercano.
+                Apoyar a las empresas en su crecimiento y formalización mediante servicios especializados que promuevan el cumplimiento normativo, la eficiencia administrativa y la reducción de riesgos legales.
               </p>
             </div>
           </div>
@@ -105,10 +101,10 @@ export default function Page() {
                 Nuestra visión
               </span>
               <h3>
-                Ser un aliado referente para empresas en Colombia.
+                Ser líderes en consultoría y gestión empresarial a nivel nacional
               </h3>
               <p>
-                Buscamos consolidarnos como una organización reconocida por la excelencia, la innovación y el compromiso con empresas más humanas, sólidas y competitivas.
+                Consolidarnos como una organización líder a nivel nacional en servicios de consultoría y gestión empresarial, destacándonos por nuestra innovación, uso de tecnología y calidad en el servicio.
               </p>
             </div>
           </div>
@@ -138,29 +134,7 @@ export default function Page() {
                 Confianza
               </h3>
               <p>
-                Relaciones transparentes y duraderas, respaldadas por información clara y seguimiento oportuno.
-              </p>
-            </div>
-            <div className="card">
-              <div className="icon">
-                ✓
-              </div>
-              <h3>
-                Cumplimiento
-              </h3>
-              <p>
-                Rigurosidad en fechas, obligaciones y lineamientos relacionados con la operación laboral.
-              </p>
-            </div>
-            <div className="card">
-              <div className="icon">
-                ●
-              </div>
-              <h3>
-                Cercanía
-              </h3>
-              <p>
-                Atención directa, cálida y orientada a resolver necesidades reales de cada empresa.
+                Construimos relaciones de largo plazo basadas en la transparencia, responsabilidad y cumplimiento.
               </p>
             </div>
             <div className="card">
@@ -171,7 +145,29 @@ export default function Page() {
                 Responsabilidad
               </h3>
               <p>
-                Cuidado de la información y acompañamiento consciente en procesos sensibles de la organización.
+                Acompañamos los procesos de nuestros clientes con compromiso y seguimiento permanente.
+              </p>
+            </div>
+            <div className="card">
+              <div className="icon">
+                ●
+              </div>
+              <h3>
+                Cercanía
+              </h3>
+              <p>
+                Brindamos atención personalizada y comunicación directa durante cada etapa del servicio.
+              </p>
+            </div>
+            <div className="card">
+              <div className="icon">
+                ✓
+              </div>
+              <h3>
+                Cumplimiento
+              </h3>
+              <p>
+                Trabajamos bajo los lineamientos de la normatividad laboral y de seguridad social vigente.
               </p>
             </div>
             <div className="card">
@@ -179,10 +175,10 @@ export default function Page() {
                 ◎
               </div>
               <h3>
-                Transparencia
+                Innovación
               </h3>
               <p>
-                Información comprensible, verificable y disponible para la toma de decisiones.
+                Incorporamos herramientas tecnológicas para simplificar y fortalecer la gestión administrativa.
               </p>
             </div>
             <div className="card">
@@ -190,10 +186,10 @@ export default function Page() {
                 ♡
               </div>
               <h3>
-                Servicio y compromiso
+                Servicio
               </h3>
               <p>
-                Dedicación continua al bienestar de los clientes y la estabilidad de sus procesos.
+                Diseñamos soluciones de acuerdo con las necesidades particulares de cada empresa.
               </p>
             </div>
           </div>
@@ -216,13 +212,16 @@ export default function Page() {
           </div>
           <div className="team-grid">
             <div className="card person">
-              <img src="/images/team-1.jpg" alt="Integrante del equipo" />
+              <img src="/images/team-1.jpg" alt="Jorge Alarcón Ortiz" />
               <div className="person-info">
-                <h3>
+                <span className="eyebrow">
                   Dirección General
+                </span>
+                <h3>
+                  Jorge Alarcón Ortiz
                 </h3>
                 <p>
-                  Estrategia, clientes y crecimiento.
+                  Cuenta con una amplia trayectoria en gestión empresarial, administrativa y comercial. Ha liderado Unialiados desde su creación, orientando el desarrollo de estrategias comerciales, la optimización de procesos y el acompañamiento de los servicios prestados a los clientes.
                 </p>
               </div>
             </div>
@@ -230,7 +229,7 @@ export default function Page() {
               <img src="/images/team-2.jpg" alt="Integrante del equipo" />
               <div className="person-info">
                 <h3>
-                  Talento Humano
+                  Asistencia Administrativa
                 </h3>
                 <p>
                   Acompañamiento a personas y procesos.
@@ -241,7 +240,7 @@ export default function Page() {
               <img src="/images/team-3.jpg" alt="Integrante del equipo" />
               <div className="person-info">
                 <h3>
-                  Cumplimiento
+                  Contabilidad
                 </h3>
                 <p>
                   Gestión laboral y seguridad social.
@@ -252,7 +251,7 @@ export default function Page() {
               <img src="/images/team-4.jpg" alt="Integrante del equipo" />
               <div className="person-info">
                 <h3>
-                  Asesoría Empresarial
+                  Auxiliar de Nómina
                 </h3>
                 <p>
                   Relación y soporte a clientes.
