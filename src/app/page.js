@@ -190,7 +190,7 @@ export default function Page() {
                   Tecnología aplicada
                 </h3>
                 <p>
-                  Utilizamos herramientas tecnológicas propias, como Unisoft, para organizar la información, mejorar la trazabilidad y optimizar los procesos.
+                  Unisoft facilita la organización y consulta de información, mejora la trazabilidad y simplifica tareas administrativas.
                 </p>
               </div>
               <div className="card">
@@ -282,7 +282,7 @@ export default function Page() {
                 ¿Necesitas apoyo en la gestión de tu empresa?
               </h2>
               <p>
-                Nuestro equipo puede ayudarte a organizar y acompañar tus procesos de nómina, seguridad social y gestión administrativa.
+                Nuestro equipo puede ayudarte con nómina, seguridad social y requerimientos administrativos específicos.
               </p>
             </div>
             <div className="actions">

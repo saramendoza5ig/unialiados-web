@@ -190,3 +190,11 @@ button,input,select,textarea{font:inherit}
 @media(max-width:1020px){.contact-grid-polished{grid-template-columns:1fr}.contact-list-polished{grid-template-columns:1fr 1fr}.analysis-final-cta{max-width:none}}
 @media(max-width:640px){.contact-list-polished{grid-template-columns:1fr}.contact-intro-card h2{font-size:26px}.contact-form-panel>.grid-2,.contact-form-panel>.field,.contact-form-actions{margin-left:20px;margin-right:20px}.contact-form-head{padding:24px 20px 18px}}
 .footer-address{display:block;color:#c9d8ea;margin:8px 0;font-size:14px}
+
+/* Unisoft technology block */
+.unisoft-panel{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;background:linear-gradient(135deg,#fff,#eef5ff);border:1px solid #d5e3f6;border-radius:28px;padding:36px 40px;box-shadow:0 14px 36px rgba(3,28,85,.07)}
+.unisoft-icon{width:78px;height:78px;border-radius:22px;display:grid;place-items:center;background:var(--blue);color:#fff;font-size:34px;font-weight:800;box-shadow:0 12px 24px rgba(22,82,170,.2)}
+.unisoft-panel h2{margin:8px 0 12px;color:var(--navy-dark);font-size:clamp(28px,3vw,40px);line-height:1.08}
+.unisoft-panel p{margin:0;color:#5c6d84;line-height:1.7;max-width:850px}
+.unisoft-points{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:18px;color:var(--blue);font-weight:700;font-size:13px}
+@media(max-width:640px){.unisoft-panel{grid-template-columns:1fr;padding:26px}.unisoft-icon{width:64px;height:64px;font-size:28px}}
