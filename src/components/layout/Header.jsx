@@ -3,69 +3,50 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+const navItems = [
+  ["/", "Inicio"],
+  ["/nosotros", "Nosotros"],
+  ["/servicios", "Servicios"],
+  ["/cotizador", "Cotizador"],
+  ["/analisis-vulnerabilidades", "Análisis de Vulnerabilidades"],
+  ["/contacto", "Contáctenos"],
+];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
-    <header className="bg-white border-b border-unialiados-gray">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/">
-          <Image
-            src="/images/logo-unialiados.png"
-            alt="Unialiados"
-            width={160}
-            height={60}
-            className="w-32 sm:w-36 md:w-40 h-auto"
-            priority
-          />
-        </Link>
-
-        <button
-          className="md:hidden text-unialiados-navy text-2xl"
-          onClick={() => setOpen(!open)}
-          aria-label="Abrir menú"
-        >
-          ☰
-        </button>
-
-        <nav className="hidden md:flex gap-6 text-unialiados-navy font-medium">
-          <Link href="/">Home</Link>
-          <Link href="/nosotros">Nosotros</Link>
-          <Link href="/servicios">Servicios</Link>
-          <Link href="/cotizador">Cotizador</Link>
-          <Link href="/analisis-vulnerabilidades">
-            Análisis de Vulnerabilidades
-          </Link>
-          <Link href="/contacto">Contáctenos</Link>
-        </nav>
+    <>
+      <div className="topbar">
+        <div className="container topbar-row">
+          <span className="topitem"><span className="topicon">☎</span> PBX: +57 (601) 248 6717</span>
+          <span className="dot">•</span>
+          <span className="topitem"><span className="topicon">▤</span> WhatsApp: +57 300 445 5981</span>
+          <span className="dot">•</span>
+          <span className="topitem"><span className="topicon">⌖</span> Sede Principal: Bogotá D.C., Colombia</span>
+          <span className="top-spacer" />
+          <span className="topitem"><span className="topicon gold">◷</span> Lunes a Viernes: 8:00 a 17:00</span>
+          <span className="dot">•</span>
+          <span className="topitem"><span className="topicon">✹</span> NIT: 900.123.456-7</span>
+        </div>
       </div>
-
-      {open && (
-        <nav className="md:hidden px-6 pb-4 flex flex-col gap-4 text-unialiados-navy font-medium">
-          <Link href="/" onClick={() => setOpen(false)}>
-            Home
+      <header className="header">
+        <div className="container header-row">
+          <Link className="brand" href="/" onClick={() => setOpen(false)}>
+            <Image src="/images/logo-unialiados.png" alt="Unialiados" width={440} height={116} priority />
           </Link>
-          <Link href="/nosotros" onClick={() => setOpen(false)}>
-            Nosotros
-          </Link>
-          <Link href="/servicios" onClick={() => setOpen(false)}>
-            Servicios
-          </Link>
-          <Link href="/cotizador" onClick={() => setOpen(false)}>
-            Cotizador
-          </Link>
-          <Link
-            href="/analisis-vulnerabilidades"
-            onClick={() => setOpen(false)}
-          >
-            Análisis de Vulnerabilidades
-          </Link>
-          <Link href="/contacto" onClick={() => setOpen(false)}>
-            Contáctenos
-          </Link>
-        </nav>
-      )}
-    </header>
+          <button className="menu-btn" aria-label="Abrir menú" aria-expanded={open} onClick={() => setOpen((value) => !value)}>☰</button>
+          <nav className={`nav${open ? " open" : ""}`}>
+            {navItems.map(([href, label]) => (
+              <Link key={href} className={pathname === href ? "active" : ""} href={href} onClick={() => setOpen(false)}>{label}</Link>
+            ))}
+            <Link className="nav-cta" href="/cotizador" onClick={() => setOpen(false)}>Cotizar en Línea</Link>
+          </nav>
+        </div>
+      </header>
+    </>
   );
 }
