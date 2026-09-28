@@ -163,7 +163,16 @@ export default function Page() {
     setStep("result");
   }
 
+  function clearDiagnostic() {
+    setCurrentIndex(0);
+    setTransitioning(false);
+    setAnswers({});
+    setLead(emptyLead);
+    setErrors({});
+  }
+
   function startDiagnostic(scrollToForm = false) {
+    if (scrollToForm) clearDiagnostic();
     setStep("checklist");
     if (!scrollToForm) return;
 
@@ -177,12 +186,8 @@ export default function Page() {
   }
 
   function restart() {
+    clearDiagnostic();
     setStep("intro");
-    setCurrentIndex(0);
-    setTransitioning(false);
-    setAnswers({});
-    setLead(emptyLead);
-    setErrors({});
   }
 
   return (
@@ -227,6 +232,20 @@ export default function Page() {
                 </li>
               ))}
             </ol>
+            <div className="level-row">
+              <div className="level low">
+                <strong>Nivel Bajo (0–25%)</strong>
+                <span>Operación controlada y soportes al día.</span>
+              </div>
+              <div className="level medium">
+                <strong>Nivel Medio (26–60%)</strong>
+                <span>Existen observaciones que requieren revisión.</span>
+              </div>
+              <div className="level high">
+                <strong>Nivel Alto (61–100%)</strong>
+                <span>Se identifican riesgos que requieren atención prioritaria.</span>
+              </div>
+            </div>
             {step === "intro" && (
               <div className="check-panel step-panel" key="intro">
                 <span className="eyebrow">Evaluación inicial gratuita</span>
@@ -449,20 +468,6 @@ export default function Page() {
                 </div>
               </div>
             )}
-            <div className="level-row">
-              <div className="level low">
-                <strong>Nivel Bajo (0–25%)</strong>
-                <span>Operación controlada y soportes al día.</span>
-              </div>
-              <div className="level medium">
-                <strong>Nivel Medio (26–60%)</strong>
-                <span>Existen observaciones que requieren revisión.</span>
-              </div>
-              <div className="level high">
-                <strong>Nivel Alto (61–100%)</strong>
-                <span>Se identifican riesgos que requieren atención prioritaria.</span>
-              </div>
-            </div>
           </div>
           <aside>
             {step !== "result" && (
