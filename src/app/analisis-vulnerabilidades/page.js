@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const questions = [
   {
@@ -45,7 +45,6 @@ const emptyLead = {
   email: "",
   telefono: "",
   empresa: "",
-  nit: "",
   empleados: "",
   sector: "",
 };
@@ -77,12 +76,31 @@ export default function Page() {
   const [answers, setAnswers] = useState({});
   const [lead, setLead] = useState(emptyLead);
   const [errors, setErrors] = useState({});
+  const [gaugePercent, setGaugePercent] = useState(0);
 
   const answeredCount = Object.keys(answers).length;
   const allAnswered = answeredCount === questions.length;
   const alertCount = Object.values(answers).filter((value) => value === false).length;
   const riskPercent = Math.round((alertCount / questions.length) * 100);
   const risk = riskLevelFor(riskPercent);
+
+  useEffect(() => {
+    if (step !== "result") {
+      setGaugePercent(0);
+      return;
+    }
+    let frame;
+    const duration = 1100;
+    const start = performance.now();
+    function tick(now) {
+      const linear = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - linear, 3);
+      setGaugePercent(Math.round(riskPercent * eased));
+      if (linear < 1) frame = requestAnimationFrame(tick);
+    }
+    frame = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frame);
+  }, [step, riskPercent]);
 
   function handleAnswer(id, value) {
     setAnswers((prev) => ({ ...prev, [id]: value }));
@@ -244,15 +262,6 @@ export default function Page() {
                       {errors.empresa && <span className="field-error">{errors.empresa}</span>}
                     </div>
                     <div className="field">
-                      <label htmlFor="nit">NIT</label>
-                      <input
-                        id="nit"
-                        type="text"
-                        value={lead.nit}
-                        onChange={(event) => handleLeadChange("nit", event.target.value)}
-                      />
-                    </div>
-                    <div className="field">
                       <label htmlFor="empleados">Número de empleados</label>
                       <select
                         id="empleados"
@@ -349,11 +358,11 @@ export default function Page() {
                   <span className="risk-pill">{risk.label}</span>
                 </div>
                 <div className="gauge-wrap">
-                  <div className="gauge" style={{ "--p": riskPercent }}>
+                  <div className="gauge" style={{ "--p": gaugePercent }}>
                     <div className="needle"></div>
                   </div>
                 </div>
-                <div className="gauge-value">{riskPercent}%</div>
+                <div className="gauge-value">{gaugePercent}%</div>
                 <p className="risk-sub">de vulnerabilidad potencial detectada</p>
                 <div className="interpret">
                   <strong>{risk.label}</strong>
