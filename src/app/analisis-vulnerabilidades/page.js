@@ -72,14 +72,16 @@ function riskLevelFor(percent) {
 }
 
 export default function Page() {
-  const [step, setStep] = useState("checklist");
+  const [step, setStep] = useState("intro");
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [transitioning, setTransitioning] = useState(false);
   const [answers, setAnswers] = useState({});
   const [lead, setLead] = useState(emptyLead);
   const [errors, setErrors] = useState({});
   const [gaugePercent, setGaugePercent] = useState(0);
 
+  const currentQuestion = questions[currentIndex];
   const answeredCount = Object.keys(answers).length;
-  const allAnswered = answeredCount === questions.length;
   const alertCount = Object.values(answers).filter((value) => value === false).length;
   const riskPercent = Math.round((alertCount / questions.length) * 100);
   const risk = riskLevelFor(riskPercent);
@@ -90,7 +92,7 @@ export default function Page() {
       return;
     }
     let frame;
-    const duration = 1100;
+    const duration = 1400;
     const start = performance.now();
     function tick(now) {
       const linear = Math.min((now - start) / duration, 1);
@@ -102,8 +104,25 @@ export default function Page() {
     return () => cancelAnimationFrame(frame);
   }, [step, riskPercent]);
 
-  function handleAnswer(id, value) {
-    setAnswers((prev) => ({ ...prev, [id]: value }));
+  function goToQuestion(index) {
+    setTransitioning(true);
+    setTimeout(() => {
+      setCurrentIndex(index);
+      setTransitioning(false);
+    }, 260);
+  }
+
+  function handleAnswer(value) {
+    setAnswers((prev) => ({ ...prev, [currentQuestion.id]: value }));
+    setTransitioning(true);
+    setTimeout(() => {
+      if (currentIndex + 1 < questions.length) {
+        setCurrentIndex((index) => index + 1);
+      } else {
+        setStep("lead");
+      }
+      setTransitioning(false);
+    }, 380);
   }
 
   function handleLeadChange(field, value) {
@@ -127,6 +146,15 @@ export default function Page() {
       return;
     }
     setStep("result");
+  }
+
+  function restart() {
+    setStep("intro");
+    setCurrentIndex(0);
+    setTransitioning(false);
+    setAnswers({});
+    setLead(emptyLead);
+    setErrors({});
   }
 
   return (
@@ -158,64 +186,88 @@ export default function Page() {
               </div>
             </div>
 
-            {step === "checklist" && (
-              <div className="check-panel">
-                <span className="eyebrow">Paso 1 de 3 · Autodiagnóstico</span>
+            {step === "intro" && (
+              <div className="check-panel step-panel" key="intro">
+                <span className="eyebrow">Autodiagnóstico gratuito</span>
                 <h2 className="panel-title checklist-title">
-                  Lista de Chequeo Rápida (7 puntos críticos)
+                  ¿Quieres conocer el nivel de riesgo de tu empresa?
                 </h2>
                 <p className="panel-copy">
-                  Responda cada pregunta con Sí o No. Al finalizar podrá ver su resultado.
+                  Responde 7 preguntas rápidas sobre tu operación laboral y de seguridad social. Al final verás tu
+                  nivel de riesgo con un indicador gráfico, en menos de 2 minutos.
                 </p>
-                <p className="note">{answeredCount} de {questions.length} preguntas respondidas</p>
-                {questions.map((question) => {
-                  const value = answers[question.id];
-                  const answeredClass =
-                    value === true ? "ok" : value === false ? "alert" : "";
-                  return (
-                    <div key={question.id} className={`question ${answeredClass}`}>
-                      <div className="qnum">{question.id}</div>
-                      <div className="qtext">
-                        <strong>{question.text}</strong>
-                        <p>{question.note}</p>
-                      </div>
-                      <div className="answer-buttons">
-                        <button
-                          type="button"
-                          className={`answer-btn yes${value === true ? " selected" : ""}`}
-                          onClick={() => handleAnswer(question.id, true)}
-                        >
-                          Sí
-                        </button>
-                        <button
-                          type="button"
-                          className={`answer-btn no${value === false ? " selected" : ""}`}
-                          onClick={() => handleAnswer(question.id, false)}
-                        >
-                          No
-                        </button>
-                      </div>
-                    </div>
-                  );
-                })}
                 <div className="checklist-actions">
                   <button
                     type="button"
                     className="btn btn-primary full"
-                    disabled={!allAnswered}
-                    onClick={() => setStep("lead")}
+                    onClick={() => setStep("checklist")}
                   >
-                    Ver mi resultado →
+                    Sí, quiero mi diagnóstico →
                   </button>
                 </div>
               </div>
             )}
 
-            {step === "lead" && (
+            {step === "checklist" && (
               <div className="check-panel">
-                <span className="eyebrow">Paso 2 de 3 · Sus datos</span>
+                <span className="eyebrow">Autodiagnóstico</span>
+                <h2 className="panel-title checklist-title">Lista de Chequeo Rápida</h2>
+                <p className="panel-copy">Responda cada pregunta con Sí o No.</p>
+                <div className="progress-track">
+                  <div
+                    className="progress-bar"
+                    style={{ width: `${(currentIndex / questions.length) * 100}%` }}
+                  ></div>
+                </div>
+                <p className="note">
+                  Pregunta {currentIndex + 1} de {questions.length}
+                </p>
+                <div
+                  key={currentQuestion.id}
+                  className={`question question-single${transitioning ? " question-leave" : ""}`}
+                >
+                  <div className="qnum">{currentIndex + 1}</div>
+                  <div className="qtext">
+                    <strong>{currentQuestion.text}</strong>
+                    <p>{currentQuestion.note}</p>
+                  </div>
+                  <div className="answer-buttons">
+                    <button
+                      type="button"
+                      className="answer-btn yes"
+                      disabled={transitioning}
+                      onClick={() => handleAnswer(true)}
+                    >
+                      Sí
+                    </button>
+                    <button
+                      type="button"
+                      className="answer-btn no"
+                      disabled={transitioning}
+                      onClick={() => handleAnswer(false)}
+                    >
+                      No
+                    </button>
+                  </div>
+                </div>
+                <div className="question-nav">
+                  <button
+                    type="button"
+                    onClick={() => goToQuestion(currentIndex - 1)}
+                    disabled={currentIndex === 0 || transitioning}
+                  >
+                    ← Anterior
+                  </button>
+                  <span>{answeredCount} de {questions.length} respondidas</span>
+                </div>
+              </div>
+            )}
+
+            {step === "lead" && (
+              <div className="check-panel step-panel" key="lead">
+                <span className="eyebrow">Un último paso</span>
                 <h2 className="panel-title checklist-title">
-                  Un último paso para mostrarle su diagnóstico
+                  Cuéntenos quién está detrás de este diagnóstico
                 </h2>
                 <p className="panel-copy">
                   Con esta información un asesor de Unialiados podrá contactarle para explicarle el resultado y las recomendaciones.
@@ -299,8 +351,8 @@ export default function Page() {
             )}
 
             {step === "result" && (
-              <div className="check-panel">
-                <span className="eyebrow">Paso 3 de 3 · Resultado</span>
+              <div className="check-panel step-panel" key="result">
+                <span className="eyebrow">Resultado</span>
                 <h2 className="panel-title checklist-title">
                   Resultado de {lead.nombre} — {lead.empresa}
                 </h2>
@@ -323,15 +375,7 @@ export default function Page() {
                   );
                 })}
                 <div className="checklist-actions">
-                  <button
-                    type="button"
-                    className="btn btn-secondary"
-                    onClick={() => {
-                      setStep("checklist");
-                      setAnswers({});
-                      setLead(emptyLead);
-                    }}
-                  >
+                  <button type="button" className="btn btn-secondary" onClick={restart}>
                     Realizar otro diagnóstico
                   </button>
                 </div>
@@ -345,14 +389,14 @@ export default function Page() {
                   <span className="eyebrow">Termómetro de riesgo</span>
                 </div>
                 <p className="risk-sub">
-                  {step === "checklist"
-                    ? "Complete las 7 preguntas para calcular su nivel de riesgo."
-                    : "Su diagnóstico está listo. Complete sus datos para verlo."}
+                  {step === "intro" && "Complete el diagnóstico para calcular su nivel de riesgo."}
+                  {step === "checklist" && "Complete las 7 preguntas para calcular su nivel de riesgo."}
+                  {step === "lead" && "Su diagnóstico está listo. Complete sus datos para verlo."}
                 </p>
               </div>
             )}
             {step === "result" && (
-              <div className="risk-box">
+              <div className="risk-box step-panel">
                 <div className="risk-head">
                   <span className="eyebrow">Termómetro de riesgo en vivo</span>
                   <span className="risk-pill">{risk.label}</span>

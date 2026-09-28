@@ -107,6 +107,17 @@ button,input,select,textarea{font:inherit}
 .field-error{display:block;color:#c92828;font-size:12px;margin-top:6px}
 .risk-box-pending{text-align:center}.risk-box-pending .risk-head{justify-content:center}
 @media(max-width:640px){.answer-buttons{grid-column:2;justify-self:start}.checklist-actions.two{flex-direction:column;gap:10px}.checklist-actions.two .btn{width:100%}}
+@keyframes stepFadeIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.step-panel{animation:stepFadeIn .5s cubic-bezier(.16,.84,.44,1) both}
+@keyframes questionFadeIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.question-single{animation:questionFadeIn .38s cubic-bezier(.16,.84,.44,1) both;will-change:opacity,transform}
+.question-single.question-leave{opacity:0;transform:translateY(-10px);transition:opacity .24s ease,transform .24s ease;animation:none}
+.progress-track{height:6px;background:#eef2f7;border-radius:999px;overflow:hidden}
+.progress-bar{height:100%;background:linear-gradient(90deg,var(--blue),#4f9eea);border-radius:999px;transition:width .45s cubic-bezier(.16,.84,.44,1)}
+.question-nav{display:flex;justify-content:space-between;align-items:center;margin-top:18px;font-size:12px;color:#8491a2}
+.question-nav button{background:none;border:none;color:var(--blue);font-weight:700;font-size:13px;cursor:pointer;padding:8px 4px}
+.question-nav button:disabled{opacity:.35;cursor:not-allowed}
+.gauge,.needle{will-change:transform}
 
 .contact-item{display:flex;gap:14px;align-items:center}.contact-icon{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;background:#eef5ff;color:var(--blue);font-weight:800}.contact-item p{margin:3px 0 0;color:#607089}.contact-visual{margin-top:18px;border-radius:22px;overflow:hidden;position:relative;min-height:235px}.contact-visual img{width:100%;height:235px;object-fit:cover}.contact-visual>div{position:absolute;left:16px;right:16px;bottom:16px;background:rgba(3,28,85,.9);color:#fff;border-radius:14px;padding:12px 14px}.contact-visual strong,.contact-visual span{display:block}.contact-visual span{font-size:12px;color:#c6d9f7}.privacy-note{font-size:11px;color:#7a8798;margin-top:14px}
 .footer-brand img{background:white;border-radius:12px;padding:6px}.footer-bottom{display:flex;justify-content:space-between;gap:20px}
