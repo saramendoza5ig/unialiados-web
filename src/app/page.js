@@ -1,17 +1,17 @@
+import Image from "next/image";
+
 export default function Page() {
   return (
     <main>
       <section className="hero">
         <div className="container hero-grid">
-          <div>
+          <div className="hero-copy">
             <span className="eyebrow">
               Más de 25 años acompañando empresas en Colombia
             </span>
-            <h1>
-              Gestión laboral, administrativa y
-              <span>
-                de seguridad social
-              </span>
+            <h1 className="hero-title">
+              Gestión laboral, administrativa y{" "}
+              <span>de seguridad social</span>{" "}
               para empresas que buscan tranquilidad
             </h1>
             <p className="lead">
@@ -27,6 +27,9 @@ export default function Page() {
               <span>
                 ✓ Atención empresarial cercana
               </span>
+              <span>
+                ✓ Soluciones adaptadas a cada empresa
+              </span>
             </div>
             <div className="actions">
               <a className="btn btn-primary" href="/servicios">
@@ -35,6 +38,23 @@ export default function Page() {
               <a className="btn btn-secondary" href="/cotizador">
                 Solicita una cotización
               </a>
+            </div>
+          </div>
+          <div className="hero-visual">
+            <div className="hero-photo clean-photo">
+              <Image
+                src="/images/hero-unialiados-square.png"
+                alt="Equipo empresarial analizando indicadores administrativos"
+                fill
+                priority
+                sizes="(max-width: 1020px) 100vw, 46vw"
+              />
+              <div className="hero-photo-caption">
+                <strong>UNIDOS &amp; ALIADOS DE COLOMBIA SAS</strong>
+                <span>
+                  Sede Central: Bogotá D.C. • Soporte y operación a nivel nacional
+                </span>
+              </div>
             </div>
             <div className="hero-stats">
               <div className="stat">
@@ -62,9 +82,6 @@ export default function Page() {
                 </span>
               </div>
             </div>
-          </div>
-          <div className="hero-photo clean-photo">
-            <img src="/images/hero-office.jpg" alt="Equipo empresarial en reunión" />
           </div>
         </div>
       </section>
@@ -190,7 +207,7 @@ export default function Page() {
                   Tecnología aplicada
                 </h3>
                 <p>
-                  Utilizamos herramientas tecnológicas propias, como Unisoft, para organizar la información, mejorar la trazabilidad y optimizar los procesos.
+                  Unisoft facilita la organización y consulta de información, mejora la trazabilidad y simplifica tareas administrativas.
                 </p>
               </div>
               <div className="card">
@@ -282,7 +299,7 @@ export default function Page() {
                 ¿Necesitas apoyo en la gestión de tu empresa?
               </h2>
               <p>
-                Nuestro equipo puede ayudarte a organizar y acompañar tus procesos de nómina, seguridad social y gestión administrativa.
+                Nuestro equipo puede ayudarte con nómina, seguridad social y requerimientos administrativos específicos.
               </p>
             </div>
             <div className="actions">
