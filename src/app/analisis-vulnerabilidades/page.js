@@ -261,7 +261,7 @@ export default function Page() {
                   <span><b>02</b> Resultado inmediato</span>
                   <span><b>03</b> Orientación clara</span>
                 </div>
-                <div className="checklist-actions">
+                <div className="checklist-actions analysis-intro-cta">
                   <button
                     type="button"
                     className="btn btn-primary full"
