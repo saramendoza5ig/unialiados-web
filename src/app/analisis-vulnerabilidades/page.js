@@ -178,13 +178,15 @@ export default function Page() {
             <h1>
               Análisis de <span>vulnerabilidades laborales</span>
             </h1>
-            <p>
-              Identifica áreas que requieren revisión mediante una lista de chequeo y un indicador gráfico de riesgo.
-            </p>
-            <div className="analysis-hero-meta" aria-label="Características del diagnóstico">
-              <span><strong>7</strong> preguntas</span>
-              <span><strong>&lt; 2 min</strong> de duración</span>
-              <span><strong>100%</strong> confidencial</span>
+            <div className="analysis-hero-lead">
+              <p>
+                Identifica áreas que requieren revisión mediante una lista de chequeo y un indicador gráfico de riesgo.
+              </p>
+              <div className="analysis-hero-meta" aria-label="Características del diagnóstico">
+                <span><strong>7</strong> preguntas</span>
+                <span><strong>&lt; 2 min</strong> de duración</span>
+                <span><strong>100%</strong> confidencial</span>
+              </div>
             </div>
           </div>
         </div>
