@@ -221,6 +221,7 @@ button,input,select,textarea{font:inherit}
 
 /* ===== Vulnerability analysis experience ===== */
 .analysis-page{background:#f5f8fc}
+.analysis-page h1,.analysis-page h2,.analysis-page h3,.analysis-page .panel-title{font-weight:800}
 .analysis-hero{padding:36px 0 32px;background:#f7f9fc;border-bottom:1px solid var(--line)}
 .analysis-hero-inner{min-height:0}
 .analysis-hero-copy{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(330px,.85fr);gap:8px 48px;align-items:center;max-width:none}
