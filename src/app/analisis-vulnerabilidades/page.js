@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const questions = [
   {
@@ -89,7 +89,8 @@ export default function Page() {
   const [answers, setAnswers] = useState({});
   const [lead, setLead] = useState(emptyLead);
   const [errors, setErrors] = useState({});
-  const [gaugePercent, setGaugePercent] = useState(0);
+  const gaugeRef = useRef(null);
+  const gaugeValueRef = useRef(null);
 
   const currentQuestion = questions[currentIndex];
   const answeredCount = Object.keys(answers).length;
@@ -103,12 +104,15 @@ export default function Page() {
   useEffect(() => {
     if (step !== "result") return;
     let frame;
-    const duration = 1400;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const duration = reduceMotion ? 0 : 1500;
     const start = performance.now();
     function tick(now) {
-      const linear = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - linear, 3);
-      setGaugePercent(Math.round(riskPercent * eased));
+      const linear = duration === 0 ? 1 : Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - linear, 4);
+      const value = Math.round(riskPercent * eased);
+      gaugeRef.current?.style.setProperty("--p", String(value));
+      if (gaugeValueRef.current) gaugeValueRef.current.textContent = `${value}%`;
       if (linear < 1) frame = requestAnimationFrame(tick);
     }
     frame = requestAnimationFrame(tick);
@@ -159,6 +163,19 @@ export default function Page() {
     setStep("result");
   }
 
+  function startDiagnostic(scrollToForm = false) {
+    setStep("checklist");
+    if (!scrollToForm) return;
+
+    requestAnimationFrame(() => {
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      document.getElementById("diagnostico")?.scrollIntoView({
+        behavior: reduceMotion ? "auto" : "smooth",
+        block: "start",
+      });
+    });
+  }
+
   function restart() {
     setStep("intro");
     setCurrentIndex(0);
@@ -166,7 +183,6 @@ export default function Page() {
     setAnswers({});
     setLead(emptyLead);
     setErrors({});
-    setGaugePercent(0);
   }
 
   return (
@@ -187,11 +203,16 @@ export default function Page() {
                 <span><strong>&lt; 2 min</strong> de duración</span>
                 <span><strong>100%</strong> confidencial</span>
               </div>
+              <div className="analysis-hero-actions">
+                <button type="button" className="btn btn-primary" onClick={() => startDiagnostic(true)}>
+                  Comenzar diagnóstico
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </section>
-      <section className="section analysis-section">
+      <section className="section analysis-section" id="diagnostico">
         <div className="container audit-grid">
           <div>
             <ol className="analysis-steps" aria-label="Progreso del diagnóstico">
@@ -206,21 +227,6 @@ export default function Page() {
                 </li>
               ))}
             </ol>
-            <div className="level-row">
-              <div className="level low">
-                <strong>Nivel Bajo (0–25%)</strong>
-                <span>Operación controlada y soportes al día.</span>
-              </div>
-              <div className="level medium">
-                <strong>Nivel Medio (26–60%)</strong>
-                <span>Existen observaciones que requieren revisión.</span>
-              </div>
-              <div className="level high">
-                <strong>Nivel Alto (61–100%)</strong>
-                <span>Se identifican riesgos que requieren atención prioritaria.</span>
-              </div>
-            </div>
-
             {step === "intro" && (
               <div className="check-panel step-panel" key="intro">
                 <span className="eyebrow">Evaluación inicial gratuita</span>
@@ -240,9 +246,9 @@ export default function Page() {
                   <button
                     type="button"
                     className="btn btn-primary full"
-                    onClick={() => setStep("checklist")}
+                    onClick={() => startDiagnostic()}
                   >
-                    Sí, quiero mi diagnóstico →
+                    Sí, quiero mi diagnóstico
                   </button>
                 </div>
               </div>
@@ -404,7 +410,7 @@ export default function Page() {
                       ← Volver
                     </button>
                     <button type="submit" className="btn btn-primary">
-                      Ver mi resultado →
+                      Ver mi resultado
                     </button>
                   </div>
                 </form>
@@ -443,6 +449,20 @@ export default function Page() {
                 </div>
               </div>
             )}
+            <div className="level-row">
+              <div className="level low">
+                <strong>Nivel Bajo (0–25%)</strong>
+                <span>Operación controlada y soportes al día.</span>
+              </div>
+              <div className="level medium">
+                <strong>Nivel Medio (26–60%)</strong>
+                <span>Existen observaciones que requieren revisión.</span>
+              </div>
+              <div className="level high">
+                <strong>Nivel Alto (61–100%)</strong>
+                <span>Se identifican riesgos que requieren atención prioritaria.</span>
+              </div>
+            </div>
           </div>
           <aside>
             {step !== "result" && (
@@ -461,17 +481,23 @@ export default function Page() {
               </div>
             )}
             {step === "result" && (
-              <div className={`risk-box risk-${risk.key} step-panel`} aria-live="polite">
+              <div
+                className={`risk-box risk-${risk.key} step-panel`}
+                aria-label={`${risk.label}: ${riskPercent}% de vulnerabilidad potencial detectada`}
+              >
                 <div className="risk-head">
                   <span className="eyebrow">Termómetro de riesgo en vivo</span>
                   <span className={`risk-pill ${risk.key}`}>{risk.label}</span>
                 </div>
                 <div className="gauge-wrap">
-                  <div className="gauge" style={{ "--p": gaugePercent }}>
+                  <div ref={gaugeRef} className="gauge" style={{ "--p": 0 }}>
                     <div className="needle"></div>
                   </div>
                 </div>
-                <div className="gauge-value">{gaugePercent}%</div>
+                <div className="gauge-scale" aria-hidden="true">
+                  <span>0</span><span>25</span><span>60</span><span>100</span>
+                </div>
+                <div ref={gaugeValueRef} className="gauge-value" aria-hidden="true">0%</div>
                 <p className="risk-sub">de vulnerabilidad potencial detectada</p>
                 <div className="interpret">
                   <strong>{risk.label}</strong>
@@ -513,7 +539,7 @@ export default function Page() {
               </p>
             </div>
             <a className="btn btn-gold" href="/contacto">
-              Solicitar plan →
+              Solicitar plan
             </a>
           </div>
         </div>
