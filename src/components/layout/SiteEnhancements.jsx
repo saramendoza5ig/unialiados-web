@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
-const selector = ".hero-grid, .page-hero .container, .section-head, .why-grid, .process, .card, .service-card, .person, .partner-card, .panel, .cta, .question, .contact-item, .legal-id-card, .quote-card, .quote-final, .analysis-final-cta";
+const selector = ".hero-grid, .page-hero .container, .section-head, .why-grid, .process, .card, .service-card, .person, .partner-card, .panel, .cta, .question, .contact-item, .legal-id-card, .quote-card, .quote-final, .analysis-final-cta, .analysis-intro-cta";
 
 export default function SiteEnhancements() {
   const pathname = usePathname();
