@@ -247,7 +247,7 @@ export default function Page() {
               </div>
             </div>
             {step === "intro" && (
-              <div className="check-panel step-panel" key="intro">
+              <div className="check-panel intro-panel step-panel" key="intro">
                 <span className="eyebrow">Evaluación inicial gratuita</span>
                 <h2 className="panel-title checklist-title">
                   ¿Quieres conocer el nivel de riesgo de tu empresa?
