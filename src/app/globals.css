@@ -363,3 +363,11 @@ button,input,select,textarea{font:inherit}
   .analysis-page .step-panel,.analysis-page .question-single,.analysis-page .progress-bar:after{animation:none}
   .analysis-page .question-single.question-leave,.analysis-page .answer-btn,.analysis-steps li>span{transition:none}
 }
+
+/* ===== Cotizador configurable ===== */
+.quote-placeholder{display:flex;flex-direction:column;gap:6px;margin:20px 0;padding:20px;border:1px dashed #b9c9dc;border-radius:16px;background:#f8fbff;color:#5f6f84}
+.quote-placeholder strong{color:var(--navy)}
+.quote-help{display:block;margin-top:6px;color:#7a8798;font-size:12px}
+.quote-message{margin:14px 0;padding:13px 14px;border-radius:12px;background:#eef5ff;border:1px solid #cfe0f5;color:#245a91;font-size:13px}
+.quote-result-intro{font-size:14px;margin-bottom:10px}
+.quote-result-box strong{font-size:26px;max-width:60%;text-align:right;overflow-wrap:anywhere}

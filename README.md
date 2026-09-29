@@ -182,3 +182,36 @@ No subir credenciales reales al repositorio.
 El proyecto contiene actualmente la estructura técnica inicial.
 
 La implementación visual y funcional definitiva se realizará a partir de los mockups aprobados por el cliente.
+
+## Backend del cotizador
+
+Se agregó una base separada en `backend/` usando Node.js + Express.
+
+La configuración funcional del cotizador se mantiene en estado `pending_definition` hasta que Unialiados apruebe:
+
+- Variables o campos de entrada.
+- Reglas y fórmulas de cálculo.
+- Mensajes y validaciones.
+- Tipo de resultado.
+- Acción posterior a la cotización.
+
+Para levantar el backend localmente:
+
+```bash
+cd backend
+npm install
+copy .env.example .env
+npm run dev
+```
+
+En el frontend, configurar:
+
+```text
+NEXT_PUBLIC_API_URL=http://localhost:4000
+```
+
+La plantilla de definición para la reunión está en:
+
+```text
+docs/cotizador-definicion-funcional.md
+```
