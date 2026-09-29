@@ -164,7 +164,12 @@ export default function Page() {
       <section className="section">
         <div className="container why-grid">
           <div className="why-photo clean-photo">
-            <img src="/images/why-office.jpg" alt="Profesional de acompañamiento empresarial" />
+            <Image
+              src="/images/why-office-vertical.png"
+              alt="Profesional de acompañamiento empresarial"
+              fill
+              sizes="(max-width: 1020px) 100vw, 40vw"
+            />
           </div>
           <div>
             <span className="eyebrow">

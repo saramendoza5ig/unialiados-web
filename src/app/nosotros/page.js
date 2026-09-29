@@ -20,10 +20,10 @@ export default function Page() {
             <img src="/images/nosotros-portrait.jpg" alt="Equipo Unialiados" />
             <div className="about-caption">
               <strong>
-                Dirección de Consultoría & Alianzas
+                Gerente General
               </strong>
               <span>
-                Cobertura nacional
+                Jorge Alarcón
               </span>
             </div>
           </div>
@@ -332,7 +332,7 @@ export default function Page() {
         <div className="container">
           <div className="cta">
             <div>
-              <span className="eyebrow" style={{color: "#ffd35b"}}>
+              <span className="eyebrow" style={{ color: "#ffd35b" }}>
                 TU ALIADO ESTRATÉGICO ESTÁ AQUÍ
               </span>
               <h2>
