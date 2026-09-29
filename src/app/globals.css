@@ -20,6 +20,7 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;font-family:var(--font-montserrat),Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.55}
+h1,h2,h3,h4,h5,h6{font-weight:700}
 a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
 button,input,select,textarea{font:inherit}
