@@ -403,3 +403,11 @@ button,input,select,textarea{font:inherit}
   .analysis-page .step-panel,.analysis-page .question-single,.analysis-page .progress-bar:after{animation:none}
   .analysis-page .question-single.question-leave,.analysis-page .answer-btn,.analysis-steps li>span{transition:none}
 }
+
+@media(max-width:1150px){
+  .nav{display:none}
+  .menu-btn{display:block}
+  .header-row{position:relative}
+  .nav.open{display:flex;position:absolute;left:20px;right:20px;top:76px;flex-direction:column;align-items:stretch;border-radius:18px;padding:12px;box-shadow:var(--shadow)}
+  .nav.open a{text-align:center}
+}
