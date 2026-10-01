@@ -343,7 +343,7 @@ export default function Page() {
               </p>
             </div>
             <div className="actions">
-              <a className="btn btn-gold" href="/cotizador">
+              <a className="btn btn-gold" href="/servicios#cotizador">
                 Solicitar propuesta
               </a>
               <a className="btn btn-light" href="/contacto">

@@ -1,3 +1,5 @@
+import QuoteSection from "@/components/sections/QuoteSection";
+
 export default function Page() {
   return (
     <main>
@@ -47,7 +49,7 @@ export default function Page() {
                   nómina y cumplimiento laboral.
                 </span>
               </div>
-              <a className="btn btn-primary" href="/cotizador">Cotizar servicio</a>
+              <a className="btn btn-primary" href="#cotizador">Cotizar servicio</a>
             </article>
 
             <article className="service-card">
@@ -75,7 +77,7 @@ export default function Page() {
                   novedades y requerimientos.
                 </span>
               </div>
-              <a className="btn btn-primary" href="/cotizador">Cotizar servicio</a>
+              <a className="btn btn-primary" href="#cotizador">Cotizar servicio</a>
             </article>
 
             <article className="service-card">
@@ -108,6 +110,8 @@ export default function Page() {
           </div>
         </div>
       </section>
+
+      <QuoteSection />
 
       <section className="section alt">
         <div className="container">
@@ -145,7 +149,7 @@ export default function Page() {
               </p>
             </div>
             <div className="actions">
-              <a className="btn btn-gold" href="/cotizador">Solicitar cotización</a>
+              <a className="btn btn-gold" href="#cotizador">Solicitar cotización</a>
               <a className="btn btn-light" href="/contacto">Hablar con un asesor</a>
             </div>
           </div>

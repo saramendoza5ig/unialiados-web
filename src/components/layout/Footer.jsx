@@ -18,7 +18,7 @@ export default function Footer() {
           </div>
           <div>
             <h4>Herramientas</h4>
-            <Link href="/cotizador">Cotizador en línea</Link><Link href="/analisis-vulnerabilidades">Análisis de Vulnerabilidades</Link><Link href="/servicios">Portafolio empresarial</Link>
+            <Link href="/servicios#cotizador">Cotizador en línea</Link><Link href="/analisis-vulnerabilidades">Análisis de Vulnerabilidades</Link><Link href="/servicios">Portafolio empresarial</Link>
           </div>
           <div>
             <h4>Contacto</h4>

@@ -35,7 +35,7 @@ export default function Page() {
               <a className="btn btn-primary" href="/servicios">
                 Conoce nuestros servicios
               </a>
-              <a className="btn btn-secondary" href="/cotizador">
+              <a className="btn btn-secondary" href="/servicios#cotizador">
                 Solicita una cotización
               </a>
             </div>
@@ -308,7 +308,7 @@ export default function Page() {
               </p>
             </div>
             <div className="actions">
-              <a className="btn btn-gold" href="/cotizador">
+              <a className="btn btn-gold" href="/servicios#cotizador">
                 Solicitar cotización
               </a>
               <a className="btn btn-light" href="/contacto">

@@ -9,7 +9,6 @@ const navItems = [
   ["/", "Inicio"],
   ["/nosotros", "Nosotros"],
   ["/servicios", "Servicios"],
-  ["/cotizador", "Cotizador"],
   ["/analisis-vulnerabilidades", "Análisis de Vulnerabilidades"],
   ["/contacto", "Contáctenos"],
 ];
@@ -43,7 +42,7 @@ export default function Header() {
             {navItems.map(([href, label]) => (
               <Link key={href} className={pathname === href ? "active" : ""} href={href} onClick={() => setOpen(false)}>{label}</Link>
             ))}
-            <Link className="nav-cta" href="/cotizador" onClick={() => setOpen(false)}>Cotizar en Línea</Link>
+            <Link className="nav-cta" href="/servicios#cotizador" onClick={() => setOpen(false)}>Cotizar en Línea</Link>
           </nav>
         </div>
       </header>
