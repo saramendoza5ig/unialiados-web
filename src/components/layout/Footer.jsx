@@ -14,7 +14,7 @@ export default function Footer() {
           </div>
           <div>
             <h4>Navegación</h4>
-            <Link href="/">Inicio</Link><Link href="/nosotros">Nosotros</Link><Link href="/servicios">Servicios</Link><Link href="/contacto">Contáctenos</Link>
+            <Link href="/">Inicio</Link><Link href="/nosotros">Nosotros</Link><Link href="/servicios">Servicios</Link><Link href="/unisoft">Unisoft</Link><Link href="/contacto">Contáctenos</Link>
           </div>
           <div>
             <h4>Herramientas</h4>

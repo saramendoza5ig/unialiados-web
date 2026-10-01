@@ -9,6 +9,7 @@ const navItems = [
   ["/", "Inicio"],
   ["/nosotros", "Nosotros"],
   ["/servicios", "Servicios"],
+  ["/unisoft", "Unisoft"],
   ["/analisis-vulnerabilidades", "Análisis de Vulnerabilidades"],
   ["/contacto", "Contáctenos"],
 ];
