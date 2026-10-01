@@ -22,10 +22,11 @@ export default function Footer() {
           </div>
           <div>
             <h4>Contacto</h4>
-            <a href="tel:+576012486717">PBX: +57 (601) 248 6717</a>
-            <a href="https://wa.me/573004455981" target="_blank" rel="noopener noreferrer">WhatsApp: +57 300 445 5981</a>
-            <a href="mailto:hola@unialiados.com">hola@unialiados.com</a>
-            <span className="footer-address">Bogotá D.C., Colombia</span>
+            <a href="tel:+573004470236">Móvil: 300 447 0236</a>
+            <a href="tel:+573134283965">Móvil: 313 428 3965</a>
+            <a href="mailto:comercial@unialiados.com">comercial@unialiados.com</a>
+            <a href="mailto:administracion@unialiados.com">administracion@unialiados.com</a>
+            <span className="footer-address">Calle 57 N.º 13-48, Oficina 401, Bogotá D.C.</span>
           </div>
         </div>
         <div className="footer-bottom"><span>© 2026 Unialiados. Todos los derechos reservados.</span><span>Mockup visual · información demostrativa sujeta a validación.</span></div>
