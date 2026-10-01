@@ -28,7 +28,7 @@ export default function Page() {
             <article className="service-card featured">
               <div className="service-top">
                 <div className="icon">✚</div>
-                <span className="tag">3.1 Seguridad Social</span>
+                <span className="tag">Seguridad Social</span>
               </div>
               <h3>Gestión en seguridad social</h3>
               <p>
@@ -53,7 +53,7 @@ export default function Page() {
             <article className="service-card">
               <div className="service-top">
                 <div className="icon">▤</div>
-                <span className="tag">3.2 Nómina</span>
+                <span className="tag">Nómina</span>
               </div>
               <h3>Gestión de nómina</h3>
               <p>
@@ -76,7 +76,7 @@ export default function Page() {
             <article className="service-card">
               <div className="service-top">
                 <div className="icon">§</div>
-                <span className="tag">3.3 Gestión Legal</span>
+                <span className="tag">Gestión Legal</span>
               </div>
               <h3>Gestión legal y jurídica en aspectos laborales</h3>
               <p>
