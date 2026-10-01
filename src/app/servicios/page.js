@@ -8,8 +8,9 @@ export default function Page() {
           <span className="eyebrow">Nuestros servicios</span>
           <h1>Gestión empresarial clara, organizada y acompañada.</h1>
           <p>
-            Apoyamos a las empresas en sus procesos de nómina, seguridad social y
-            requerimientos administrativos específicos.
+            Unialiados presta servicios especializados para facilitar la gestión
+            laboral, el cumplimiento de las obligaciones de seguridad social y la
+            administración de procesos de nómina y asuntos jurídicos laborales.
           </p>
         </div>
       </section>
@@ -18,94 +19,80 @@ export default function Page() {
         <div className="container">
           <div className="service-tabs" aria-label="Categorías de servicios">
             <span className="active">Todos los servicios</span>
-            <span>Nómina</span>
             <span>Seguridad Social</span>
-            <span>Consultoría</span>
+            <span>Nómina</span>
+            <span>Gestión Legal</span>
           </div>
 
           <div className="services-grid">
             <article className="service-card featured">
               <div className="service-top">
-                <div className="icon">▤</div>
-                <span className="tag">Nómina empresarial</span>
-              </div>
-              <h3>Gestión y administración de nómina empresarial</h3>
-              <p>
-                Acompañamiento integral desde la vinculación de trabajadores hasta
-                el procesamiento de novedades y obligaciones periódicas.
-              </p>
-              <h4>Incluye</h4>
-              <ul>
-                <li>Contratos laborales y afiliación a seguridad social.</li>
-                <li>Liquidación de nómina ordinaria y extraordinaria.</li>
-                <li>Gestión de novedades, incapacidades y accidentes laborales.</li>
-                <li>Planillas PILA, prestaciones y desprendibles de pago.</li>
-                <li>Reporte de nómina electrónica.</li>
-              </ul>
-              <div className="benefit">
-                <strong>Beneficio principal</strong>
-                <span>
-                  Mayor organización y menor carga administrativa en los procesos de
-                  nómina y cumplimiento laboral.
-                </span>
-              </div>
-              <a className="btn btn-primary" href="#cotizador">Cotizar servicio</a>
-            </article>
-
-            <article className="service-card">
-              <div className="service-top">
                 <div className="icon">✚</div>
-                <span className="tag">Seguridad Social</span>
+                <span className="tag">3.1 Seguridad Social</span>
               </div>
-              <h3>Gestión integral de seguridad social</h3>
+              <h3>Gestión en seguridad social</h3>
               <p>
-                Administración y seguimiento de afiliaciones, aportes, incapacidades
-                y demás procesos del sistema de seguridad social.
+                Acompañamiento integral en los procesos de afiliación, aportes,
+                novedades y trámites relacionados con el sistema de seguridad social.
               </p>
               <h4>Incluye</h4>
               <ul>
-                <li>Afiliaciones a EPS, ARL, AFP y cajas de compensación.</li>
-                <li>Registro en PILA, gestión y pago de aportes.</li>
-                <li>Actualización de novedades e incapacidades.</li>
-                <li>Seguimiento y depuración de cartera.</li>
-                <li>Organización documental e informes de gestión.</li>
+                <li>Afiliación de la empresa y sus trabajadores a EPS, AFP, ARL y cajas de compensación.</li>
+                <li>Recepción, entrega y cargue de documentos requeridos por las entidades.</li>
+                <li>Capacitación y actualización sobre la Ley 100 en EPS, AFP, ARL y cajas de compensación.</li>
+                <li>Generación de planillas y pago de autoliquidaciones mediante PILA.</li>
+                <li>Orientación en servicios de IPS: lugares, clínicas y hospitales.</li>
+                <li>Reporte de accidentes laborales, trámites y recobros de incapacidades.</li>
+                <li>Manejo de licencias y permisos.</li>
+                <li>Entrega de paz y salvos al finalizar contratos.</li>
+                <li>Cargue de información en UNISOFT.</li>
               </ul>
-              <div className="benefit">
-                <strong>Beneficio principal</strong>
-                <span>
-                  Mayor control de los procesos y acompañamiento continuo frente a
-                  novedades y requerimientos.
-                </span>
-              </div>
               <a className="btn btn-primary" href="#cotizador">Cotizar servicio</a>
             </article>
 
             <article className="service-card">
               <div className="service-top">
-                <div className="icon">⌁</div>
-                <span className="tag">Por evento</span>
+                <div className="icon">▤</div>
+                <span className="tag">3.2 Nómina</span>
               </div>
-              <h3>Servicios de consultoría empresarial</h3>
+              <h3>Gestión de nómina</h3>
               <p>
-                Atención puntual para empresas que requieren apoyo específico en
-                procesos administrativos, laborales o de seguridad social.
+                Servicio integral de apoyo a la gestión de nómina, desde la
+                documentación laboral hasta la liquidación periódica y el cumplimiento
+                de obligaciones asociadas.
               </p>
-              <h4>Puede incluir</h4>
+              <h4>Incluye</h4>
               <ul>
-                <li>Afiliaciones puntuales y elaboración de planillas PILA.</li>
-                <li>Gestión de incapacidades y depuración de cartera.</li>
-                <li>Revisión documental.</li>
-                <li>Acompañamiento ante requerimientos específicos.</li>
-                <li>Apoyo administrativo por evento.</li>
+                <li>Gestión relacionada con seguridad social.</li>
+                <li>Elaboración de contratos de trabajo según las necesidades de la empresa.</li>
+                <li>Liquidación de nómina con información y novedades actualizadas.</li>
+                <li>Generación de desprendibles de pago mensuales.</li>
+                <li>Liquidación de prestaciones sociales: primas, cesantías, intereses y vacaciones.</li>
+                <li>Envío de la nómina electrónica a la DIAN.</li>
               </ul>
-              <div className="benefit">
-                <strong>Modalidad</strong>
-                <span>
-                  El servicio se presta por evento o requerimiento, de acuerdo con el
-                  tipo y alcance de la necesidad.
-                </span>
+              <a className="btn btn-primary" href="#cotizador">Cotizar servicio</a>
+            </article>
+
+            <article className="service-card">
+              <div className="service-top">
+                <div className="icon">§</div>
+                <span className="tag">3.3 Gestión Legal</span>
               </div>
-              <a className="btn btn-primary" href="/contacto">Solicitar acompañamiento</a>
+              <h3>Gestión legal y jurídica en aspectos laborales</h3>
+              <p>
+                Acompañamiento en asuntos laborales y requerimientos que requieren
+                orientación jurídica y conocimiento de la normativa vigente.
+              </p>
+              <h4>Incluye</h4>
+              <ul>
+                <li>Elaboración de contratos de trabajo según las necesidades de la empresa.</li>
+                <li>Liquidación de contratos.</li>
+                <li>Acompañamiento en demandas laborales.</li>
+                <li>Gestión de carteras de seguridad social.</li>
+                <li>Atención de reclamaciones de la UGPP.</li>
+                <li>Asesoría y orientación para procesos de pensión.</li>
+              </ul>
+              <a className="btn btn-primary" href="#cotizador">Cotizar servicio</a>
             </article>
           </div>
         </div>

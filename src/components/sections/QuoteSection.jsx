@@ -36,8 +36,7 @@ export default function QuoteSection() {
                 <select>
                   <option>Gestión de Seguridad Social</option>
                   <option>Gestión de nómina</option>
-                  <option>Asesoría UGPP</option>
-                  <option>Gestión administrativa</option>
+                  <option>Gestión legal y jurídica laboral</option>
                 </select>
               </div>
               <div className="field">
