@@ -1,3 +1,63 @@
+import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa6";
+
+const contactChannels = [
+  {
+    icon: "☎",
+    label: "Móvil 1",
+    value: "300 447 0236",
+    href: "tel:+573004470236",
+    detail: "Atención comercial",
+  },
+  {
+    icon: "☎",
+    label: "Móvil 2",
+    value: "313 428 3965",
+    href: "tel:+573134283965",
+    detail: "Atención y seguimiento",
+  },
+  {
+    icon: "✉",
+    label: "Correo comercial",
+    value: "comercial@unialiados.com",
+    href: "mailto:comercial@unialiados.com",
+    detail: "Cotizaciones e información de servicios",
+  },
+  {
+    icon: "✉",
+    label: "Correo administrativo",
+    value: "administracion@unialiados.com",
+    href: "mailto:administracion@unialiados.com",
+    detail: "Solicitudes y procesos administrativos",
+  },
+  {
+    icon: "⌂",
+    label: "Sitio web",
+    value: "www.unialiados.com",
+    href: "https://www.unialiados.com",
+    detail: "Información institucional y servicios",
+    external: true,
+  },
+  {
+    icon: "⌖",
+    label: "Dirección",
+    value: "Calle 57 N.º 13-48, Oficina 401",
+    detail: "Bogotá D.C.",
+  },
+  {
+    icon: "◷",
+    label: "Horario",
+    value: "Lunes a viernes",
+    detail: "8:00 a.m. a 5:00 p.m.",
+  },
+];
+
+const socialNetworks = [
+  { network: "Instagram", account: "@unialiados", icon: FaInstagram, slug: "instagram" },
+  { network: "Facebook", account: "Unialiados Marcas", icon: FaFacebookF, slug: "facebook" },
+  { network: "TikTok", account: "@unialiados", icon: FaTiktok, slug: "tiktok" },
+  { network: "YouTube", account: "@unialiadosmejoraliado8786", icon: FaYoutube, slug: "youtube" },
+];
+
 export default function Page() {
   return (
     <main>
@@ -7,147 +67,97 @@ export default function Page() {
             Contacto
           </span>
           <h1>
-            Hablemos, estamos para ayudarle.
+            ¡Estamos listos para apoyar tu gestión!
           </h1>
           <p>
-            Cuéntenos sobre su empresa y uno de nuestros especialistas podrá orientar la solicitud hacia el servicio adecuado.
+            Cuéntanos sobre tu empresa y nuestro equipo orientará la solicitud hacia
+            el servicio adecuado.
           </p>
         </div>
       </section>
       <section className="section contact-section">
         <div className="container contact-grid contact-grid-polished">
           <div className="contact-side">
-            <div className="contact-intro-card">
-              <span className="eyebrow">
-                Canales de atención
-              </span>
-              <h2>
-                Conversemos sobre lo que necesita su empresa
-              </h2>
-              <p>
-                Elija el canal que le resulte más cómodo. Nuestro equipo orientará su solicitud hacia el servicio o especialista adecuado.
-              </p>
-              <div className="contact-trust">
-                <span>
-                  ✓ Atención empresarial
-                </span>
-                <span>
-                  ✓ Cobertura nacional
-                </span>
-                <span>
-                  ✓ Respuesta oportuna
-                </span>
+            <div className="contact-directory">
+              <div className="contact-directory-head">
+                <span className="eyebrow">Canales de atención</span>
+                <h2>Elige el canal que prefieras</h2>
+                <p>
+                  Estamos disponibles para resolver tus inquietudes, preparar una
+                  propuesta o acompañar los procesos de tu empresa.
+                </p>
               </div>
-            </div>
-            <div className="contact-list contact-list-polished">
-              <div className="contact-item">
-                <span className="contact-icon">
-                  ☎
-                </span>
-                <div>
-                  <small>
-                    PBX Bogotá
-                  </small>
-                  <strong>
-                    +57 (601) 248 6717
-                  </strong>
-                  <p>
-                    Lunes a Viernes · 8:00 a 17:00
-                  </p>
-                </div>
+
+              <div className="contact-directory-body">
+                <section className="contact-directory-group">
+                  <h3>Líneas directas</h3>
+                  <div className="contact-phone-grid">
+                    {contactChannels.slice(0, 2).map((channel) => (
+                      <a className="contact-phone" href={channel.href} key={channel.label}>
+                        <span className="contact-directory-icon" aria-hidden="true">
+                          {channel.icon}
+                        </span>
+                        <span>
+                          <small>{channel.label}</small>
+                          <strong>{channel.value}</strong>
+                          <em>{channel.detail}</em>
+                        </span>
+                      </a>
+                    ))}
+                  </div>
+                </section>
+
+                <section className="contact-directory-group">
+                  <h3>Correos electrónicos</h3>
+                  <div className="contact-directory-rows">
+                    {contactChannels.slice(2, 4).map((channel) => (
+                      <a className="contact-directory-row" href={channel.href} key={channel.label}>
+                        <span className="contact-directory-icon" aria-hidden="true">
+                          {channel.icon}
+                        </span>
+                        <span className="contact-directory-copy">
+                          <small>{channel.label}</small>
+                          <strong>{channel.value}</strong>
+                          <em>{channel.detail}</em>
+                        </span>
+                      </a>
+                    ))}
+                  </div>
+                </section>
+
+                <section className="contact-directory-group">
+                  <h3>Información general</h3>
+                  <div className="contact-directory-rows compact">
+                    {contactChannels.slice(4).map((channel) => {
+                      const Row = channel.href ? "a" : "div";
+
+                      return (
+                        <Row
+                          className="contact-directory-row"
+                          href={channel.href}
+                          target={channel.external ? "_blank" : undefined}
+                          rel={channel.external ? "noopener noreferrer" : undefined}
+                          key={channel.label}
+                        >
+                          <span className="contact-directory-icon" aria-hidden="true">
+                            {channel.icon}
+                          </span>
+                          <span className="contact-directory-copy">
+                            <small>{channel.label}</small>
+                            <strong>{channel.value}</strong>
+                            <em>{channel.detail}</em>
+                          </span>
+                        </Row>
+                      );
+                    })}
+                  </div>
+                </section>
               </div>
-              <div className="contact-item">
-                <span className="contact-icon">
-                  ▤
-                </span>
-                <div>
-                  <small>
-                    Línea WhatsApp
-                  </small>
-                  <strong>
-                    +57 300 445 5981
-                  </strong>
-                  <p>
-                    Atención comercial y seguimiento
-                  </p>
-                </div>
-              </div>
-              <div className="contact-item">
-                <span className="contact-icon">
-                  ✉
-                </span>
-                <div>
-                  <small>
-                    Correo corporativo
-                  </small>
-                  <strong>
-                    hola@unialiados.com
-                  </strong>
-                  <p>
-                    Propuestas, información y solicitudes
-                  </p>
-                </div>
-              </div>
-              <div className="contact-item">
-                <span className="contact-icon">
-                  ⌖
-                </span>
-                <div>
-                  <small>
-                    Sede principal
-                  </small>
-                  <strong>
-                    Bogotá D.C., Colombia
-                  </strong>
-                  <p>
-                    Atención presencial con cita previa
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="legal-id-card">
-              <span className="eyebrow">
-                Identificación jurídica
-              </span>
-              <h3>
-                UNIDOS & ALIADOS DE COLOMBIA SAS
-              </h3>
-              <div className="legal-id-grid">
-                <div>
-                  <span>
-                    NIT
-                  </span>
-                  <strong>
-                    900.123.456-7
-                  </strong>
-                </div>
-                <div>
-                  <span>
-                    Régimen
-                  </span>
-                  <strong>
-                    Responsable de IVA
-                  </strong>
-                </div>
-                <div>
-                  <span>
-                    Ciudad
-                  </span>
-                  <strong>
-                    Bogotá D.C., Colombia
-                  </strong>
-                </div>
-                <div>
-                  <span>
-                    Cobertura
-                  </span>
-                  <strong>
-                    Nivel Nacional
-                  </strong>
-                </div>
-              </div>
-              <div className="legal-id-footer">
-                ✹ Registro mercantil y Cámara de Comercio al día
+
+              <div className="contact-assurances">
+                <span>✓ Atención empresarial</span>
+                <span>✓ Cobertura nacional</span>
+                <span>✓ Respuesta oportuna</span>
               </div>
             </div>
           </div>
@@ -157,10 +167,11 @@ export default function Page() {
                 Envíenos un mensaje
               </span>
               <h2 className="panel-title">
-                ¿Cómo podemos ayudarle?
+                ¿Cómo podemos ayudarte?
               </h2>
               <p>
-                Complete el formulario y uno de nuestros especialistas se pondrá en contacto con usted.
+                Completa el formulario y uno de nuestros especialistas se pondrá en
+                contacto contigo.
               </p>
             </div>
             <div className="grid-2">
@@ -227,6 +238,30 @@ export default function Page() {
                 🔒 Información tratada de acuerdo con la política de protección de datos.
               </span>
             </div>
+          </div>
+        </div>
+      </section>
+      <section className="section contact-social-section">
+        <div className="container">
+          <div className="section-head">
+            <div>
+              <span className="eyebrow">Redes sociales</span>
+              <h2>También estamos en redes</h2>
+              <p>Sigue a Unialiados y conoce nuestras novedades.</p>
+            </div>
+          </div>
+          <div className="social-grid">
+            {socialNetworks.map(({ network, account, icon: SocialIcon, slug }) => (
+              <div className={`social-item ${slug}`} key={network}>
+                <span className="social-icon" aria-hidden="true">
+                  <SocialIcon />
+                </span>
+                <div>
+                  <span className="social-network">{network}</span>
+                  <strong>{account}</strong>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

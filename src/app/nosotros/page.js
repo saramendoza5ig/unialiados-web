@@ -7,10 +7,13 @@ export default function Page() {
             Sobre Unialiados
           </span>
           <h1>
-            Más de dos décadas acompañando el crecimiento de las empresas
+            Más de 25 años acompañando el crecimiento de las empresas
           </h1>
           <p>
-            Unidos & Aliados de Colombia S.A.S. es una empresa colombiana dedicada a la consultoría y gestión empresarial, especializada en el acompañamiento administrativo, laboral y organizacional de pequeñas y medianas empresas.
+            Unidos &amp; Aliados de Colombia S.A.S. es una empresa colombiana dedicada
+            a la consultoría y gestión empresarial, con experiencia en el
+            acompañamiento administrativo, laboral, de seguridad social y recurso
+            humano.
           </p>
         </div>
       </section>
@@ -20,10 +23,10 @@ export default function Page() {
             <img src="/images/nosotros-portrait.jpg" alt="Equipo Unialiados" />
             <div className="about-caption">
               <strong>
-                Gerente General
+                Dirección General
               </strong>
               <span>
-                Jorge Alarcón
+                Jorge Alarcón Ortiz
               </span>
             </div>
           </div>
@@ -55,13 +58,28 @@ export default function Page() {
               </div>
             </div>
             <h2 className="section-title small">
-              Fundada el 24 de septiembre de 2001
+              Historia y trayectoria
             </h2>
             <p className="copy">
-              La iniciativa nació como respuesta a la necesidad de apoyar a los empresarios en los procesos de formalización y cumplimiento de la normatividad laboral y de seguridad social.
+              Durante más de 25 años hemos apoyado a más de 417 empresas de
+              diferentes sectores de la economía, brindando servicios confiables,
+              personalizados y respaldados por herramientas tecnológicas.
             </p>
             <p className="copy">
-              Desde entonces hemos desarrollado experiencia especialmente en empresas del sector de la construcción, participando directa e indirectamente en diferentes proyectos de infraestructura y obras civiles del país.
+              Unialiados fue fundada el 24 de septiembre de 2001 como respuesta a la
+              necesidad de apoyar a los empresarios en sus procesos de formalización
+              y cumplimiento de la normativa laboral y de seguridad social. Desde
+              entonces ha consolidado relaciones de confianza y largo plazo con sus
+              clientes.
+            </p>
+            <p className="copy">
+              A lo largo de su trayectoria ha fortalecido su conocimiento práctico
+              en procesos administrativos, laborales, de nómina y seguridad social,
+              con un enfoque orientado al cumplimiento, la eficiencia y la
+              prevención de riesgos. Su experiencia ha sido especialmente
+              significativa en el sector de la construcción, acompañando empresas y
+              participando directa e indirectamente en proyectos de infraestructura
+              y obras civiles en Colombia.
             </p>
             <div className="actions">
               <a className="btn btn-primary" href="#equipo">
@@ -221,7 +239,11 @@ export default function Page() {
                   Jorge Alarcón Ortiz
                 </h3>
                 <p>
-                  Cuenta con una amplia trayectoria en gestión empresarial, administrativa y comercial. Ha liderado Unialiados desde su creación, orientando el desarrollo de estrategias comerciales, la optimización de procesos y el acompañamiento de los servicios prestados a los clientes.
+                  Cuenta con una amplia trayectoria en gestión empresarial,
+                  administrativa y comercial. Ha liderado el desarrollo de
+                  Unialiados desde su creación, orientando estrategias de
+                  crecimiento, optimización de procesos y acompañamiento de los
+                  servicios prestados a los clientes.
                 </p>
               </div>
             </div>
@@ -272,58 +294,68 @@ export default function Page() {
                 Juntos generamos más valor
               </h2>
               <p>
-                Unialiados articula relaciones con organizaciones especializadas para ampliar la oferta de soluciones a sus clientes.
+                Unialiados ha formalizado alianzas con diferentes organizaciones y
+                proveedores para ampliar las soluciones disponibles y ofrecer
+                servicios complementarios en un mismo ecosistema.
               </p>
             </div>
           </div>
           <div className="grid-3 partners-grid">
             <div className="card partner-card">
               <div className="partner-logo">
-                AP
+                CF
               </div>
               <div>
                 <h3>
-                  Aportes en Línea
+                  Comfacundi
                 </h3>
                 <p>
-                  Aliado tecnológico para procesos relacionados con seguridad social y gestión de aportes.
+                  Organización aliada dentro del ecosistema de soluciones
+                  complementarias para empresas y trabajadores.
                 </p>
-                <a href="#" className="partner-link">
-                  Visitar aliado →
-                </a>
               </div>
             </div>
             <div className="card partner-card">
               <div className="partner-logo">
-                ARL
+                AXA
               </div>
               <div>
                 <h3>
-                  SURA
+                  AXA Colpatria
                 </h3>
                 <p>
-                  Articulación para iniciativas de prevención, bienestar y seguridad en el trabajo.
+                  Aliado para ampliar el acceso a soluciones de seguros, prevención
+                  y protección empresarial.
                 </p>
-                <a href="#" className="partner-link">
-                  Visitar aliado →
-                </a>
               </div>
             </div>
             <div className="card partner-card">
               <div className="partner-logo">
-                CCF
+                AS
               </div>
               <div>
                 <h3>
-                  Compensar
+                  Asopagos
                 </h3>
                 <p>
-                  Relación orientada al bienestar de las personas, familias y organizaciones.
+                  Organización aliada para apoyar procesos relacionados con aportes
+                  y seguridad social.
                 </p>
-                <a href="#" className="partner-link">
-                  Visitar aliado →
-                </a>
               </div>
+            </div>
+          </div>
+          <div className="partner-services">
+            <div>
+              <span className="eyebrow">Soluciones complementarias</span>
+              <h3>Servicios asociados a nuestras alianzas</h3>
+            </div>
+            <div className="partner-services-grid">
+              <span>Pólizas de seguros</span>
+              <span>Laboratorios médicos</span>
+              <span>Capacitación para trabajo en alturas</span>
+              <span>Sistemas de gestión</span>
+              <span>Asesorías jurídicas</span>
+              <span>Dotaciones y elementos de protección personal (EPP)</span>
             </div>
           </div>
         </div>

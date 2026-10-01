@@ -30,7 +30,5 @@ export default function SiteEnhancements() {
     return () => observer.disconnect();
   }, [pathname]);
 
-  return (
-    <a className="whatsapp-float" href="https://wa.me/573004455981" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp"><span>◉</span></a>
-  );
+  return null;
 }

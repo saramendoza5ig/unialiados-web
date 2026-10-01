@@ -21,15 +21,13 @@ export default function Header() {
     <>
       <div className="topbar">
         <div className="container topbar-row">
-          <span className="topitem"><span className="topicon">☎</span> PBX: +57 (601) 248 6717</span>
+          <span className="topitem"><span className="topicon">☎</span> Móvil: 300 447 0236</span>
           <span className="dot">•</span>
-          <span className="topitem"><span className="topicon">▤</span> WhatsApp: +57 300 445 5981</span>
+          <span className="topitem"><span className="topicon">☎</span> Móvil: 313 428 3965</span>
           <span className="dot">•</span>
-          <span className="topitem"><span className="topicon">⌖</span> Sede Principal: Bogotá D.C., Colombia</span>
+          <span className="topitem"><span className="topicon">⌖</span> Bogotá D.C.</span>
           <span className="top-spacer" />
-          <span className="topitem"><span className="topicon gold">◷</span> Lunes a Viernes: 8:00 a 17:00</span>
-          <span className="dot">•</span>
-          <span className="topitem"><span className="topicon">✹</span> NIT: 900.123.456-7</span>
+          <span className="topitem"><span className="topicon gold">◷</span> Lunes a viernes: 8:00 a.m. a 5:00 p.m.</span>
         </div>
       </div>
       <header className="header">
