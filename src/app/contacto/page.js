@@ -4,15 +4,15 @@ const contactChannels = [
   {
     icon: "☎",
     label: "Móvil 1",
-    value: "300 447 0236",
-    href: "tel:+573004470236",
+    value: "300 445 5981",
+    href: "tel:+573004455981",
     detail: "Atención comercial",
   },
   {
     icon: "☎",
     label: "Móvil 2",
-    value: "313 428 3965",
-    href: "tel:+573134283965",
+    value: "321 422 0446",
+    href: "tel:+573214220446",
     detail: "Atención y seguimiento",
   },
   {

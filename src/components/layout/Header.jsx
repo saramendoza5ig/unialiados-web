@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { FiClock, FiMapPin, FiSmartphone } from "react-icons/fi";
 
 const navItems = [
   ["/", "Inicio"],
@@ -22,13 +23,13 @@ export default function Header() {
     <>
       <div className="topbar">
         <div className="container topbar-row">
-          <span className="topitem"><span className="topicon">☎</span> Móvil: 300 447 0236</span>
+          <span className="topitem"><span className="topicon" aria-hidden="true"><FiSmartphone /></span> Móvil: 300 445 5981</span>
           <span className="dot">•</span>
-          <span className="topitem"><span className="topicon">☎</span> Móvil: 313 428 3965</span>
+          <span className="topitem"><span className="topicon" aria-hidden="true"><FiSmartphone /></span> Móvil: 321 422 0446</span>
           <span className="dot">•</span>
-          <span className="topitem"><span className="topicon">⌖</span> Bogotá D.C.</span>
+          <span className="topitem"><span className="topicon" aria-hidden="true"><FiMapPin /></span> Bogotá D.C.</span>
           <span className="top-spacer" />
-          <span className="topitem"><span className="topicon gold">◷</span> Lunes a viernes: 8:00 a.m. a 5:00 p.m.</span>
+          <span className="topitem"><span className="topicon gold" aria-hidden="true"><FiClock /></span> Lunes a viernes: 8:00 a.m. a 5:00 p.m.</span>
         </div>
       </div>
       <header className="header">

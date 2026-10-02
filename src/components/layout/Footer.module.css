@@ -1,0 +1,154 @@
+.footer {
+  margin-top: 0;
+  background: #0a1c33;
+  color: #d3e0f2;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(0, .85fr) minmax(0, 1.12fr) minmax(0, 1.2fr);
+  gap: clamp(24px, 3vw, 52px);
+  padding: 58px 0 48px;
+}
+
+.brand {
+  display: inline-flex;
+  width: fit-content;
+  border-radius: 13px;
+  background: #fff;
+}
+
+.brand img {
+  display: block;
+  width: 205px;
+  height: auto;
+  padding: 7px;
+  border-radius: inherit;
+}
+
+.about p {
+  max-width: 280px;
+  margin: 18px 0 0;
+  color: #a9bfda;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.column h2 {
+  margin: 5px 0 21px;
+  color: #76bdff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .065em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.links,
+.contactList {
+  display: grid;
+  gap: 13px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.links a,
+.contactList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #d3e0f2;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.links a,
+.contactList a,
+.bottom a {
+  color: inherit;
+  text-decoration: none;
+  transition: color .2s ease;
+}
+
+.links a:hover,
+.contactList a:hover,
+.bottom a:hover {
+  color: #fff;
+}
+
+.links svg,
+.contactList svg {
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  color: #3b9cff;
+  stroke-width: 2.5;
+}
+
+.contactList span,
+.contactList a {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.hours {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 18px;
+  padding-top: 17px;
+  border-top: 1px solid rgba(169, 191, 218, .18);
+  color: #a9bfda;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.hours svg {
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+  margin-top: 1px;
+  color: #fbb912;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  padding: 22px 0 27px;
+  border-top: 1px solid rgba(169, 191, 218, .18);
+  color: #91abc9;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.bottom a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+@media (max-width: 1020px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 34px 42px;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 44px 0 38px;
+  }
+
+  .column h2 {
+    margin-bottom: 15px;
+  }
+
+  .bottom {
+    flex-direction: column;
+  }
+}
