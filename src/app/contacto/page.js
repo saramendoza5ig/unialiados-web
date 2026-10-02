@@ -55,7 +55,16 @@ const socialNetworks = [
   { network: "Instagram", account: "@unialiados", icon: FaInstagram, slug: "instagram" },
   { network: "Facebook", account: "Unialiados Marcas", icon: FaFacebookF, slug: "facebook" },
   { network: "TikTok", account: "@unialiados", icon: FaTiktok, slug: "tiktok" },
-  { network: "YouTube", account: "@unialiadosmejoraliado8786", icon: FaYoutube, slug: "youtube" },
+  {
+    network: "YouTube",
+    account: (
+      <>
+        @unialiados<wbr />mejoraliado8786
+      </>
+    ),
+    icon: FaYoutube,
+    slug: "youtube",
+  },
 ];
 
 export default function Page() {
