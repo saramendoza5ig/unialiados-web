@@ -241,6 +241,7 @@ button,input,select,textarea{font:inherit}
 .social-item{display:flex;align-items:center;gap:14px;min-width:0;padding:20px;border:1px solid var(--line);border-top:4px solid var(--blue);border-radius:var(--radius);background:#fff;box-shadow:0 8px 22px rgba(3,28,85,.05)}
 .social-item:nth-child(2),.social-item:nth-child(4){border-top-color:var(--gold)}
 .social-item span,.social-item strong{display:block}
+.social-item>div{min-width:0}
 .social-icon{display:grid!important;place-items:center;flex:0 0 46px;width:46px;height:46px;border-radius:12px;background:#f3f6fb;font-size:25px}
 .social-item.instagram .social-icon{color:#e4405f}
 .social-item.facebook .social-icon{color:#1877f2}
@@ -248,6 +249,7 @@ button,input,select,textarea{font:inherit}
 .social-item.youtube .social-icon{color:#f00}
 .social-item .social-network{color:var(--blue);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
 .social-item strong{margin-top:6px;color:var(--navy-dark);font-size:15px;overflow-wrap:anywhere}
+.social-item.youtube strong{overflow-wrap:normal;word-break:normal}
 @media(max-width:1020px){.partner-services{grid-template-columns:1fr}.social-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.partner-services{padding:22px}.partner-services-grid,.social-grid{grid-template-columns:1fr}}
 
