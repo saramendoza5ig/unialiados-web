@@ -1,4 +1,6 @@
 import Link from "next/link";
+import DashboardTilt from "./DashboardTilt";
+import UnisoftScrollEffects from "./UnisoftScrollEffects";
 import styles from "./page.module.css";
 
 export const metadata = {
@@ -55,6 +57,7 @@ const capabilities = [
 export default function Page() {
   return (
     <main className={styles.page}>
+      <UnisoftScrollEffects />
       <section className={styles.hero}>
         <div className={`container ${styles.heroGrid}`}>
           <div className={styles.heroCopy}>
@@ -78,7 +81,7 @@ export default function Page() {
             </div>
           </div>
 
-          <div className={styles.preview} aria-label="Vista ilustrativa de los módulos de Unisoft">
+          <DashboardTilt>
             <div className={styles.previewBar}>
               <span className={styles.windowDots} aria-hidden="true"><i /><i /><i /></span>
               <span className={styles.previewBrand}>U<span>nisoft</span><small> / workspace</small></span>
@@ -109,13 +112,13 @@ export default function Page() {
               </div>
             </div>
             <span className={styles.previewCaption}>Vista ilustrativa de los módulos de la plataforma</span>
-          </div>
+          </DashboardTilt>
         </div>
       </section>
 
       <section className={styles.intro}>
         <div className="container">
-          <div className={styles.introGrid}>
+          <div className={`${styles.introGrid} ${styles.scrollReveal}`}>
             <div>
               <span className="eyebrow">Una operación más visible</span>
               <h2>Menos información dispersa. Más contexto para actuar.</h2>
@@ -132,12 +135,12 @@ export default function Page() {
 
       <section className={styles.features} id="funcionalidades">
         <div className="container">
-          <div className={styles.sectionHeading}>
+          <div className={`${styles.sectionHeading} ${styles.scrollReveal}`}>
             <span className="eyebrow">Qué puedes gestionar</span>
             <h2>Funcionalidades para el día a día de tu empresa</h2>
             <p>Los módulos se conectan alrededor de las empresas, sus sedes y sus trabajadores.</p>
           </div>
-          <div className={styles.featureGrid}>
+          <div className={`${styles.featureGrid} ${styles.scrollReveal}`}>
             {capabilities.map((item) => (
               <article className={styles.featureCard} key={item.number}>
                 <span className={styles.featureNumber}>{item.number}</span>
@@ -151,7 +154,7 @@ export default function Page() {
       </section>
 
       <section className={styles.workflow}>
-        <div className={`container ${styles.workflowGrid}`}>
+        <div className={`container ${styles.workflowGrid} ${styles.scrollReveal}`}>
           <div>
             <span className="eyebrow">Pensado para distintos usuarios</span>
             <h2>Cada persona accede a lo que le corresponde</h2>
@@ -171,7 +174,7 @@ export default function Page() {
 
       <section className={styles.finalSection}>
         <div className="container">
-          <div className={styles.finalCard}>
+          <div className={`${styles.finalCard} ${styles.scrollReveal}`}>
             <div>
               <span className="eyebrow">Conoce Unisoft</span>
               <h2>Hablemos de lo que necesita tu empresa.</h2>
